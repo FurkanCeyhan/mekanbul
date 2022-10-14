@@ -1,0 +1,63 @@
+extends layout
+block content
+  .row.page-header 
+    .col-lg-12 
+      h1 Piyola Cafe
+  .row
+    .col-xs-12.col-md-12 
+      .row 
+        .col-xs-12.col-sm-6
+          p.rating
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+          p FATÄ°H MAHALLESÄ°
+          .panel.panel-primary 
+            .panel-heading 
+              h2.panel-title Çalýþma Saatleri 
+            .panel-body
+              p 
+                | Pazartesi-Cuma : 07.00-23.30
+              p 
+                | Cumartesi-Pazar: 09.00-23.30
+          .panel.panel-primary 
+            .panel-heading 
+              h2.panel-title Neler Var?
+            .panel-body 
+              span.label.label-warning Kahveler
+              | &nbsp;
+              span.label.label-warning Kahvaltý
+              | &nbsp;
+              span.label.label-warning Ýçecek    
+              | &nbsp;
+        .col-xs-12.col-sm-6
+          .panel.panel-primary 
+            .panel-heading     
+              h2.panel-title Konum Bilgisi 
+            .panel-body 
+              -var enlem=37.76
+              -var boylam=30.55
+              img.img-responsive.img-rounded(src='https://maps.googleapis.com/maps/api/staticmap?center='+enlem+','+boylam+'&zoom=12&size=600x400&markers='+enlem+','+boylam+'&key=AIzaSyCmmKygTpBzHGOZEciJpAdxC9v_tWHagnE')
+  .row 
+    .col-xs-12 
+      .panel.panel-primary 
+        .panel-heading 
+          a.btn.btn-default.pull-right(href='/mekan/yorum/yeni') Yorum Ekle 
+          h2.panel-title Müþteri Yorumlari
+        .panel-body.review-contaier 
+          .row 
+            .review 
+              .well.well-sm.review-header 
+                span.rating
+                span.glyphicon.glyphicon-star
+                span.glyphicon.glyphicon-star
+                span.glyphicon.glyphicon-star
+                span.glyphicon.glyphicon-star
+                span.glyphicon.glyphicon-star-empty
+                span.review-author Ahmet Furkan Ceyhan
+                small.reviewTimestamp &nbsp; 14 EKÝM 2022
+              .col-xs-12 
+                p idare eder bir mekan.     
+                        
