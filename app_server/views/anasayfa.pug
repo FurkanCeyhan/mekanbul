@@ -1,64 +1,25 @@
 extends layout
+include fonksiyonlar/yildiz
 block content
   #banner.page-header
     .row 
       .col-lg-6 
         h1 
-          |MekanBul
-          small &nbsp; MEKANLARI KESFET!   
-  .row 
-    .row.list-group 
-    .col-xs-12.col-sm-12 
-      .col-xs-12.list-group-item 
-        h4 
-          a(href='/mekan') Piyola Cafe
-          small &nbsp;
-          span.glyphicon.glyphicon-star    
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star      
-          span.glyphicon.glyphicon-star 
-        span.badge.pull-right.badge-default 400m
-        p.address CARSI 
-        p 
-          span.label.label-warning KAFE 
-          | &nbsp;
-          span.label.label-warning KAHVALTI
-  .row 
-    .row.list-group 
-    .col-xs-12.col-sm-12 
-      .col-xs-12.list-group-item 
-        h4 
-          a(href='/mekan') HADRE KAFE
-          small &nbsp;
-          span.glyphicon.glyphicon-star    
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star-empty 
-        span.badge.pull-right.badge-default 700m
-        p.address CARSI
-        p 
-          span.label.label-warning KAHVE
-          | &nbsp;
-          span.label.label-warning PASTA
-          | &nbsp;
-          span.label.label-warning OYUN
-  .row 
-    .row.list-group 
-    .col-xs-12.col-sm-12 
-      .col-xs-12.list-group-item 
-        h4 
-          a(href='/mekan') BURC FIRIN
-          small &nbsp;
-          span.glyphicon.glyphicon-star    
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star
-          span.glyphicon.glyphicon-star-empty
-          span.glyphicon.glyphicon-star-empty
-        span.badge.pull-right.badge-default 2km
-        p.address MODERNEVLER MAHALLESI
-        p 
-          span.label.label-warning TATLI
-          | &nbsp;
-          span.label.label-warning PASTA       
+          | #{sayfaBaslik.siteAd} 
+          small &nbsp; #{sayfaBaslik.slogan}
+  .row
+    each mekan in mekanlar 
+      .row.list-group 
+      .col-xs-12.col-sm-12
+        .col-xs-12.list-group-item 
+          h4 
+            a(href='/mekan')=mekan.ad
+            small &nbsp;
+            +puanOlustur(mekan.puan)
+          span.badge.pull-right.badge-default= mekan.mesafe
+          p.adress= mekan.adres
+          p
+            each imkan in mekan.imkanlar
+              span.label.label-warning= imkan
+              | &nbsp;
+  
